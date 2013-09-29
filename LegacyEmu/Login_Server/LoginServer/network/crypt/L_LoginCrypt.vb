@@ -46,7 +46,7 @@ Public Class L_LoginCrypt
         Return data
     End Function
 
-    #Region
+
     Private Function veryfyChecksum(ByVal data() As Byte, ByVal offset As Integer, ByVal size As Integer) As Boolean
         If (size And 3) <> 0 OrElse size <= 4 Then
             Return False
@@ -73,7 +73,6 @@ Public Class L_LoginCrypt
 
         Return chksum = 0
     End Function
-#End Region
 
     Public Shared Sub appendChecksum(ByVal raw() As Byte, ByVal offset As Integer, ByVal size As Integer)
         Dim chksum As Long = 0
