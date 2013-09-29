@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.20623.1 VSUPREVIEW
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Login_Server", "Login_Server\Login_Server.vbproj", "{9FD5D21A-51A2-4C22-B9CA-7A716381BCDC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9FD5D21A-51A2-4C22-B9CA-7A716381BCDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FD5D21A-51A2-4C22-B9CA-7A716381BCDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FD5D21A-51A2-4C22-B9CA-7A716381BCDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FD5D21A-51A2-4C22-B9CA-7A716381BCDC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
