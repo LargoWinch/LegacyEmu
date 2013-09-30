@@ -101,8 +101,14 @@
   <ItemGroup>
     <Compile Include="LoginServer\configuration\Config.vb" />
     <Compile Include="LoginServer\configuration\ConfigFile.vb" />
+    <Compile Include="LoginServer\network\clientpackets\LoginServerPing.vb" />
+    <Compile Include="LoginServer\network\clientpackets\PleaseAcceptPlayer.vb" />
     <Compile Include="LoginServer\network\crypt\L_LoginCrypt.vb" />
     <Compile Include="LoginServer\network\L_LoginClient.vb" />
+    <Compile Include="LoginServer\network\L_ReceiveBasePacket.vb" />
+    <Compile Include="LoginServer\network\L_ReceiveServerPacket.vb" />
+    <Compile Include="LoginServer\network\L_SendBasePacket.vb" />
+    <Compile Include="LoginServer\network\L_SendServerPacket.vb" />
     <Compile Include="LoginServer\util\Logger.vb" />
     <Compile Include="Module1.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -146,7 +152,6 @@
     <Folder Include="LoginServer\database\" />
     <Folder Include="LoginServer\managers\" />
     <Folder Include="LoginServer\model\" />
-    <Folder Include="LoginServer\network\clientpackets\" />
     <Folder Include="LoginServer\network\game_client\" />
     <Folder Include="LoginServer\network\game_server\" />
     <Folder Include="LoginServer\network\serverpackets\" />
@@ -165,6 +170,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="LegacyEmu.ico" />
+    <Content Include="LoginServer\network\Readme.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

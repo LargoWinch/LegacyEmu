@@ -1,4 +1,8 @@
-﻿Public Class PleaseAcceptPlayer
+﻿'19:10:36
+'30.09.2013
+'Autor: LargoWinch
+
+Public Class PleaseAcceptPlayer
     Inherits L_SendServerPacket
     Private time As String
 

@@ -1,4 +1,8 @@
-﻿Friend Class LoginServerPing
+﻿'19:19:13
+'30.09.2013
+'Autor: LargoWinch
+
+Friend Class LoginServerPing
     Inherits L_SendServerPacket
 
     Protected Friend Overrides Sub write()
