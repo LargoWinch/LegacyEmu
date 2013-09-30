@@ -101,9 +101,19 @@
   <ItemGroup>
     <Compile Include="LoginServer\configuration\Config.vb" />
     <Compile Include="LoginServer\configuration\ConfigFile.vb" />
-    <Compile Include="LoginServer\network\clientpackets\LoginServerPing.vb" />
-    <Compile Include="LoginServer\network\clientpackets\PleaseAcceptPlayer.vb" />
+    <Compile Include="LoginServer\database\DataBaseFactory.vb" />
+    <Compile Include="LoginServer\database\Sql.vb" />
+    <Compile Include="LoginServer\managers\AccountManager.vb" />
+    <Compile Include="LoginServer\model\L_L2Account.vb" />
+    <Compile Include="LoginServer\model\L_L2Server.vb" />
+    <Compile Include="LoginServer\network\clientpackets\AuthGameGuard.vb" />
+    <Compile Include="LoginServer\network\clientpackets\RequestAuthLogin.vb" />
+    <Compile Include="LoginServer\network\game_client\LoginServerFail.vb" />
+    <Compile Include="LoginServer\network\game_client\LoginServerPing.vb" />
+    <Compile Include="LoginServer\network\game_client\AcceptPlayer.vb" />
+    <Compile Include="LoginServer\network\game_client\KickAccount.vb" />
     <Compile Include="LoginServer\network\crypt\L_LoginCrypt.vb" />
+    <Compile Include="LoginServer\network\game_server\SM_AUTH_GG.vb" />
     <Compile Include="LoginServer\network\L_LoginClient.vb" />
     <Compile Include="LoginServer\network\L_ReceiveBasePacket.vb" />
     <Compile Include="LoginServer\network\L_ReceiveServerPacket.vb" />
@@ -149,11 +159,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="LoginServer\communication\" />
-    <Folder Include="LoginServer\database\" />
-    <Folder Include="LoginServer\managers\" />
-    <Folder Include="LoginServer\model\" />
-    <Folder Include="LoginServer\network\game_client\" />
-    <Folder Include="LoginServer\network\game_server\" />
     <Folder Include="LoginServer\network\serverpackets\" />
   </ItemGroup>
   <ItemGroup>
