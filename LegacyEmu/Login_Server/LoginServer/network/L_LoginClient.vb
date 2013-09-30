@@ -1,4 +1,7 @@
-﻿
+﻿'07:47:03 
+'30.09.2013
+'Autor: LargoWinch
+
 Imports System.Net.Sockets
 Imports System.Net
 Imports L2Crypt
