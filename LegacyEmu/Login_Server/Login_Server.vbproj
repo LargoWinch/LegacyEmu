@@ -102,6 +102,7 @@
     <Compile Include="LoginServer\configuration\Config.vb" />
     <Compile Include="LoginServer\configuration\ConfigFile.vb" />
     <Compile Include="LoginServer\network\crypt\L_LoginCrypt.vb" />
+    <Compile Include="LoginServer\network\L_LoginClient.vb" />
     <Compile Include="LoginServer\util\Logger.vb" />
     <Compile Include="Module1.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
