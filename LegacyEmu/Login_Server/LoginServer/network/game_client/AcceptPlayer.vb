@@ -2,7 +2,7 @@
 '30.09.2013
 'Autor: LargoWinch
 
-Public Class PleaseAcceptPlayer
+Public Class AcceptPlayer
     Inherits L_SendServerPacket
     Private time As String
 
