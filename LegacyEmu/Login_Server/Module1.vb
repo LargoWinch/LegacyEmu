@@ -6,15 +6,12 @@ Imports System.Net.Sockets
 Imports System.Net
 
 Module Module1
-
-    Sub Main()
+    Sub Main(ByVal args() As String)
         StartProgram.getInstance()
         Process.GetCurrentProcess().WaitForExit()
+
     End Sub
-
 End Module
-
-
 Friend Class StartProgram
 
     Private Shared auth As New StartProgram()
@@ -57,7 +54,7 @@ Friend Class StartProgram
 
     End Sub
     Private Sub accept(ByVal client As TcpClient)
-        ClientManager.getInstance().addClient(client)
+        ' ClientManager.getInstance().addClient(client)
     End Sub
 End Class
 
