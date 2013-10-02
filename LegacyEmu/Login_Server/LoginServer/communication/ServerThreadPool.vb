@@ -81,4 +81,27 @@ Public Class ServerThreadPool
             End If
         Next s
     End Sub
+
+    Public Function LoggedAlready(ByVal account As String) As Boolean
+        For Each srv As L_L2Server In servers
+            If srv.thread IsNot Nothing Then
+                If srv.thread.LoggedAlready(account) Then
+                    srv.thread.KickAccount(account)
+                    Return True
+                End If
+            End If
+        Next srv
+
+        Return False
+    End Function
+
+    Public Sub SendPlayer(ByVal serverId As Byte, ByVal client As L_LoginClient, ByVal time As String)
+        For Each srv As L_L2Server In servers
+            If srv.id = serverId AndAlso srv.thread IsNot Nothing Then
+                srv.thread.SendPlayer(client, time)
+                Exit For
+            End If
+        Next srv
+
+    End Sub
 End Class

@@ -5,6 +5,15 @@
 Public MustInherit Class L_ReceiveServerPacket
     Private _packet() As Byte
     Private _offset As Integer
+    Public thread As ServerThread
+
+    Public Sub makeme(ByVal thread As ServerThread, ByVal packet() As Byte)
+        Me.thread = thread
+        _packet = packet
+        _offset = 1
+        read()
+    End Sub
+
     Public Function readD() As Integer
         Dim result As Integer = BitConverter.ToInt32(_packet, _offset)
         _offset += 4
@@ -52,7 +61,7 @@ Public MustInherit Class L_ReceiveServerPacket
             End If
             _offset += (result.Length * 2) + 2
         Catch ex As Exception
-            Logger.error("чтение строки из пакета, " & ex.Message & " " & ex.StackTrace)
+            Logger.error("while reading string from packet, " & ex.Message & " " & ex.StackTrace)
         End Try
         Return result
     End Function

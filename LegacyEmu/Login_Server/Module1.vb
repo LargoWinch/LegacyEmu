@@ -40,6 +40,24 @@ Friend Class StartProgram
         Console.WriteLine("#----------------------------------------------------------------------#")
         Console.WriteLine("#              Copyright (c) 2013 Legacy Dev Team                      #")
         Console.WriteLine("#======================================================================#")
+
+        Config.load()
+        DataBaseFactory.Instance.Initialize()
+        Sql.getInstance()
+
+        LoginListener = New TcpListener(IPAddress.Parse(Config.SERVER_HOST), Config.SERVER_PORT)
+        LoginListener.Start()
+        Logger.extra_info("Сервер аутентификации клиента " & Config.SERVER_HOST & ":" & Config.SERVER_PORT)
+        ' CType(New System.Threading.Thread(ServerThreadPool.getInstance().start), System.Threading.Thread).Start()
+        Dim clientSocket As TcpClient = Nothing
+        Do
+            clientSocket = LoginListener.AcceptTcpClient()
+            accept(clientSocket)
+        Loop
+
+    End Sub
+    Private Sub accept(ByVal client As TcpClient)
+        ClientManager.getInstance().addClient(client)
     End Sub
 End Class
 

@@ -74,16 +74,16 @@ Public Class ServerThread
 
         Dim msg As L_ReceiveServerPacket = Nothing
         Select Case id
-            '  Case &HA0
-            '     msg = New RequestLoginServPing(Me, buff)
-            'Case &HA1
-            '   msg = New RequestLoginAuth(Me, buff)
-            'Case &HA2
-            '   msg = New RequestPlayerInGame(Me, buff)
-            'Case &HA3
-            '   msg = New RequestPlayersOnline(Me, buff)
-            'Case &HA4
-            '   msg = New RequestUpdatePremiumState(Me, buff)
+            Case &HA0
+                msg = New RequestLoginServPing(Me, buff)
+            Case &HA1
+                msg = New RequestLoginAuth(Me, buff)
+            Case &HA2
+                msg = New RequestPlayerInGame(Me, buff)
+            Case &HA3
+                msg = New RequestPlayersOnline(Me, buff)
+            Case &HA4
+                msg = New RequestUpdatePremiumState(Me, buff)
         End Select
 
         If msg Is Nothing Then
@@ -135,5 +135,14 @@ Public Class ServerThread
     Public Function LoggedAlready(ByVal account As String) As Boolean
         Return activeInGame.Contains(account)
     End Function
+
+    Public Sub SendPlayer(ByVal client As L_LoginClient, ByVal time As String)
+        sendPacket(New AcceptPlayer(client.activeAccount, time))
+    End Sub
+
+    Public Sub KickAccount(ByVal account As String)
+        activeInGame.Remove(account)
+        sendPacket(New KickAccount(account))
+    End Sub
 
 End Class
