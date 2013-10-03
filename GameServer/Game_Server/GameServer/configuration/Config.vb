@@ -2,7 +2,7 @@
 '03.10.2013
 'Autor: LargoWinch
 
-Friend Class Cfg
+Friend Class Config
     Public Shared SERVER_HOST As String
     Public Shared SERVER_PORT As Short
 

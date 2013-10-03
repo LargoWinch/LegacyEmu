@@ -4,6 +4,7 @@
 
 Imports System.Net
 Imports System.Net.Sockets
+Imports L2Crypt
 
 Public Class GameClient
     Public _address As EndPoint
@@ -11,6 +12,7 @@ Public Class GameClient
     Public _stream As NetworkStream
     Private _buffer() As Byte
     Public _blowfishKey() As Byte
+    Private _crypt As GameCrypt
 
 
     Public Protocol As Integer
@@ -30,6 +32,28 @@ Public Class GameClient
         Dim key() As Byte = BlowFishKeygen.getRandomKey()
         Return key
     End Function
+
+    Public Sub sendPacket(ByVal sbp As GameServerNetworkPacket)
+        If IsTerminated Then
+            Return
+        End If
+
+        sbp.write()
+        Dim data() As Byte = sbp.ToByteArray()
+        _crypt.encrypt(data)
+        Dim bytes As New List(Of Byte)()
+        bytes.AddRange(BitConverter.GetBytes(CShort(Fix(data.Length + 2))))
+        bytes.AddRange(data)
+        TrafficDown += bytes.Count
+
+        Try
+            _stream.Write(bytes.ToArray(), 0, bytes.Count)
+            '  _stream.Flush();
+        Catch
+            Console.WriteLine("client " & AccountName & " terminated.")
+            termination()
+        End Try
+    End Sub
 
     Public Sub termination()
         Console.WriteLine("termination")
