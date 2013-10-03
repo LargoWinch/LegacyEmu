@@ -67,6 +67,15 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GameServer\base\ClassId.vb" />
+    <Compile Include="GameServer\base\RaceId.vb" />
+    <Compile Include="GameServer\base\Sex.vb" />
+    <Compile Include="GameServer\configuration\Config.vb" />
+    <Compile Include="GameServer\configuration\ConfigFile.vb" />
+    <Compile Include="GameServer\crypt\BlowFishKeygen.vb" />
+    <Compile Include="GameServer\crypt\Crypt.vb" />
+    <Compile Include="GameServer\network\GameClient.vb" />
+    <Compile Include="GameServer\util\Logger.vb" />
     <Compile Include="Module1.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -103,6 +112,9 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="GameServer\network\NewFolder1\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
