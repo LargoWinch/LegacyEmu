@@ -38,7 +38,7 @@ Public Class ServerThreadPool
         reader.Close()
         connection.Close()
 
-        Logger.info("GameServerThread: loaded " & servers.Count & " servers")
+        Logger.info("GameServerThread: загрузка сервера " & servers.Count & " .")
 
     End Sub
 
@@ -57,7 +57,7 @@ Public Class ServerThreadPool
     Public Sub start()
         listener = New TcpListener(IPAddress.Parse(Config.SERVER_HOST), Config.SERVER_PORT_GAMESERVER)
         listener.Start()
-        Logger.extra_info("Auth server listening gameservers at " & Config.SERVER_HOST & ":" & Config.SERVER_PORT_GAMESERVER)
+        Logger.extra_info("Сервер аутентификации Гейм Сервера " & Config.SERVER_HOST & ":" & Config.SERVER_PORT_GAMESERVER)
         Do
             verifyClient(listener.AcceptTcpClient())
         Loop

@@ -26,25 +26,31 @@ Friend Class AccountManager
 
         Do While reader.Read()
             Dim account As New L_L2Account()
-            account.name = reader.GetString("account")
-            account.password = reader.GetString("password")
-            account.serverId = CByte(reader.GetInt32("serverId"))
-            account.builder = reader.GetInt32("builder")
-            account.type = CType(System.Enum.Parse(GetType(AccountType), reader.GetString("type")), AccountType)
-            account.timeend = reader.GetString("timeEnd")
-            account.lastlogin = reader.GetString("lastlogin")
-            account.lastAddress = reader.GetString("lastAddress")
-            account.premium = reader.GetInt32("premium") = 1
-            account.points = reader.GetInt64("points")
-            _accounts.Add(account.name.ToLower(), account)
+            account.Name = reader.GetString("account")
+            account.Password = reader.GetString("password")
+            account.ServerId = CByte(reader.GetInt32("serverId"))
+            account.Builder = reader.GetInt32("builder")
+            account.Type = CType(System.Enum.Parse(GetType(AccountType), reader.GetString("type")), AccountType)
+            account.TimeEnd = reader.GetString("timeEnd")
+            account.LastLogin = reader.GetString("lastlogin")
+            account.LastAddress = reader.GetString("lastAddress")
+            account.Premium = reader.GetInt32("premium") = 1
+            account.Points = reader.GetInt64("points")
+            _accounts.Add(account.Name.ToLower(), account)
         Loop
 
         reader.Close()
         connection.Close()
-        Logger.extra_info("ACM: loaded " & _accounts.Count & " accounts")
+        Logger.extra_info("ACM: загрузка аккаунтов " & _accounts.Count & " ")
     End Sub
 
     Public Function createAccount(ByVal user As String, ByVal password As String, ByVal address As String) As L_L2Account
+        Dim sqb As New Sql_Block("accounts")
+        sqb.param("account", user)
+        sqb.param("password", password)
+        sqb.param("lastlogin", Date.Now.ToLocalTime())
+        sqb.param("lastAddress", address)
+        sqb.sql_insert()
 
         Dim account As New L_L2Account()
         account.Name = user
@@ -70,9 +76,13 @@ Friend Class AccountManager
 
     Public Sub UpdatePremium(ByVal account As String, ByVal status As Byte, ByVal points As Long)
         Dim acc As L_L2Account = _accounts(account)
-        acc.premium = status = 1
-        acc.points = points
+        acc.Premium = status = 1
+        acc.Points = points
 
-       
+        Dim sqb As New Sql_Block("accounts")
+        sqb.param("premium", status)
+        sqb.param("points", points)
+        sqb.where("account", account)
+        sqb.sql_update()
     End Sub
 End Class

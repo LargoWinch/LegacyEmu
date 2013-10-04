@@ -30,7 +30,7 @@ Friend Class ClientManager
             ScrambledPairs(i) = New ScrambledKeyPair(ScrambledKeyPair.genKeyPair())
         Next i
 
-        Logger.info("Кодированние " & ScrambledPairs.Length & " пары ключей.")
+        Logger.info("Кодированние ключей " & ScrambledPairs.Length & " .")
         Logger.info("Случайный blowfish ключ.")
 
         BlowfishKeys = New Byte(BlowfishCount - 1)() {}
@@ -40,7 +40,7 @@ Friend Class ClientManager
             CType(New Random(), Random).NextBytes(BlowfishKeys(i))
         Next i
 
-        Logger.info("Случайный " & BlowfishKeys.Length & " blowfish ключ.")
+        Logger.info("Случайных " & BlowfishKeys.Length & " blowfish ключей.")
     End Sub
 
     Protected _banned As NetworkBlock

@@ -34,7 +34,7 @@ Friend Class NetworkRedirect
             End If
         Loop
 
-        Logger.info("NetworkRedirect: " & redirects.Count & "перенаправление. Глобальный " & (If(GlobalRedirection Is Nothing, "выключенный", "включенный")))
+        Logger.info("NetworkRedirect:  перенаправление " & redirects.Count & " Глобальный " & (If(GlobalRedirection Is Nothing, "выключенный", "включенный")))
     End Sub
 
     Public Function GetRedirect(ByVal client As L_LoginClient, ByVal serverId As Short) As Byte()

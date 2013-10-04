@@ -4,15 +4,15 @@
 
 Public Class L_L2Account
 
-    Public Name As String
-    Public Password As String
-    Public Address As String
-    Public ServerId As Byte
-    Public Builder As Integer
-    Public LastLogin As String
-    Public LastAddress As String
-    Public Id As Integer
-    Public Type As AccountType
+    Public name As String
+    Public password As String
+    Public address As String
+    Public serverId As Byte
+    Public builder As Integer
+    Public lastlogin As String
+    Public lastaddress As String
+    Public id As Integer
+    Public type As AccountType
 
     Public TimeEnd As String
     Public Points As Long
@@ -21,8 +21,8 @@ End Class
 
 
 Public Enum AccountType
-    Trial
-    Limited
-    Normal
-    Ultra
+    trial
+    limited
+    normal
+    ultra
 End Enum
