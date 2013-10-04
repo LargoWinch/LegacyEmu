@@ -2,7 +2,7 @@
 '03.10.2013
 'Autor: LargoWinch
 
-Public MustInherit Class GameServerNetworkRequest
+Public MustInherit Class GameServerRequest
     Private buffer() As Byte
     Private position As Integer
     Public Client As GameClient

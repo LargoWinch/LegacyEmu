@@ -6,7 +6,7 @@
 'format:	cdbd
 
 Friend Class ProtocolVersion
-    Inherits GameServerNetworkRequest
+    Inherits GameServerRequest
     Public Sub New(ByVal client As GameClient, ByVal data() As Byte)
         MyBase.makeme(client, data)
     End Sub

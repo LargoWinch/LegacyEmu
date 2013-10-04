@@ -33,7 +33,7 @@ Public Class GameClient
         Return key
     End Function
 
-    Public Sub sendPacket(ByVal sbp As GameServerNetworkPacket)
+    Public Sub sendPacket(ByVal sbp As GameServerPacket)
         If IsTerminated Then
             Return
         End If

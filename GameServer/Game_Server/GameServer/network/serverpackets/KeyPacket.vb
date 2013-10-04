@@ -3,7 +3,7 @@
 'Autor: LargoWinch
 
 Friend Class KeyPacket
-    Inherits GameServerNetworkPacket
+    Inherits GameServerPacket
     Private key() As Byte
     Private [next] As Byte
     Public Sub New(ByVal client As GameClient, ByVal n As Byte)

@@ -47,7 +47,7 @@ Friend Class Logger
             Return
         End If
 
-        name = "log\" & Date.Now.ToString("чч-ММ-ГГ ЧЧ-мм-сс") & ".log"
+        name = "log\" & Date.Now.ToString("yyyy-MM-dd HH-mm-ss") & ".log"
         tw = File.CreateText(name)
         extra_info("Лог файл создан " & name)
     End Sub

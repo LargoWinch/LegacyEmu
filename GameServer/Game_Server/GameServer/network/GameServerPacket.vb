@@ -4,7 +4,7 @@
 
 Imports System.IO
 
-Public MustInherit Class GameServerNetworkPacket
+Public MustInherit Class GameServerPacket
     Private stream As New MemoryStream()
 
     Protected Sub writeEx(ByVal value As Integer)
