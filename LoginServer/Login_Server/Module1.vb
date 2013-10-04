@@ -49,7 +49,6 @@ Friend Class StartProgram
         LoginListener = New TcpListener(IPAddress.Parse(Config.SERVER_HOST), Config.SERVER_PORT)
         LoginListener.Start()
         Logger.extra_info("Сервер аутентификации клиента " & Config.SERVER_HOST & ":" & Config.SERVER_PORT)
-        'CType(New System.Threading.Thread(ServerThreadPool.getInstance().start), System.Threading.Thread).Start()
         CType(New System.Threading.Thread(AddressOf ServerThreadPool.getInstance().start), System.Threading.Thread).Start()
         Dim clientSocket As TcpClient = Nothing
         Do

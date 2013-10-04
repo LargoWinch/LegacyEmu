@@ -30,7 +30,7 @@ Friend Class ClientManager
             ScrambledPairs(i) = New ScrambledKeyPair(ScrambledKeyPair.genKeyPair())
         Next i
 
-        Logger.info("Кодированние ключей " & ScrambledPairs.Length & " .")
+        Logger.info("Кодированние ключей " & ScrambledPairs.Length & ".")
         Logger.info("Случайный blowfish ключ.")
 
         BlowfishKeys = New Byte(BlowfishCount - 1)() {}
