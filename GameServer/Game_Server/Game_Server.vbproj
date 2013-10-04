@@ -84,10 +84,38 @@
     <Compile Include="GameServer\configuration\ConfigFile.vb" />
     <Compile Include="GameServer\crypt\BlowFishKeygen.vb" />
     <Compile Include="GameServer\crypt\Crypt.vb" />
+    <Compile Include="GameServer\network\clientpackets\Action.vb" />
+    <Compile Include="GameServer\network\clientpackets\ActionUse.vb" />
+    <Compile Include="GameServer\network\clientpackets\AuthLogin.vb" />
+    <Compile Include="GameServer\network\clientpackets\BypassUserCmd.vb" />
+    <Compile Include="GameServer\network\clientpackets\CreateCharacter.vb" />
+    <Compile Include="GameServer\network\clientpackets\EnterWorld.vb" />
+    <Compile Include="GameServer\network\clientpackets\FinishRotating.vb" />
+    <Compile Include="GameServer\network\clientpackets\GoToLobby.vb" />
+    <Compile Include="GameServer\network\clientpackets\MoveTo.vb" />
     <Compile Include="GameServer\network\clientpackets\ProtocolVersion.vb" />
+    <Compile Include="GameServer\network\clientpackets\Say2.vb" />
+    <Compile Include="GameServer\network\clientpackets\SelectCharacter.vb" />
+    <Compile Include="GameServer\network\clientpackets\StartRotating.vb" />
+    <Compile Include="GameServer\network\clientpackets\TargetCancel.vb" />
+    <Compile Include="GameServer\network\clientpackets\ValidatePosition.vb" />
     <Compile Include="GameServer\network\GameClient.vb" />
     <Compile Include="GameServer\network\GameServerNetworkPacket.vb" />
     <Compile Include="GameServer\network\GameServerNetworkRequest.vb" />
+    <Compile Include="GameServer\network\serverpackets\ActionFail.vb" />
+    <Compile Include="GameServer\network\serverpackets\CharacterCreateFail.vb" />
+    <Compile Include="GameServer\network\serverpackets\CharacterCreateSuccess.vb" />
+    <Compile Include="GameServer\network\serverpackets\CharSelected.vb" />
+    <Compile Include="GameServer\network\serverpackets\KeyPacket.vb" />
+    <Compile Include="GameServer\network\serverpackets\MoveToPawn.vb" />
+    <Compile Include="GameServer\network\serverpackets\RestartResponse.vb" />
+    <Compile Include="GameServer\network\serverpackets\ShortCutInit.vb" />
+    <Compile Include="GameServer\network\serverpackets\SocialAction.vb" />
+    <Compile Include="GameServer\network\serverpackets\StartRotating.vb" />
+    <Compile Include="GameServer\network\serverpackets\SystemMessage.vb" />
+    <Compile Include="GameServer\network\serverpackets\TargetSelected.vb" />
+    <Compile Include="GameServer\network\serverpackets\TargetUnselected.vb" />
+    <Compile Include="GameServer\network\serverpackets\UserInfo.vb" />
     <Compile Include="GameServer\util\Logger.vb" />
     <Compile Include="Module1.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -129,7 +157,6 @@
   <ItemGroup>
     <Folder Include="GameServer\network\game_client\" />
     <Folder Include="GameServer\network\game_server\" />
-    <Folder Include="GameServer\network\serverpackets\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
