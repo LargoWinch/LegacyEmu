@@ -69,6 +69,10 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="vjslib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Windows\Microsoft.NET\Framework\v2.0.50727\vjslib.dll</HintPath>
+    </Reference>
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
@@ -130,9 +134,11 @@
     <Compile Include="GameServer\network\serverpackets\TargetSelected.vb" />
     <Compile Include="GameServer\network\serverpackets\TargetUnselected.vb" />
     <Compile Include="GameServer\network\serverpackets\UserInfo.vb" />
+    <Compile Include="GameServer\util\GArray.vb" />
     <Compile Include="GameServer\util\Location.vb" />
     <Compile Include="GameServer\util\Logger.vb" />
     <Compile Include="GameServer\model\L2Object.vb" />
+    <Compile Include="GameServer\util\MTRandom.vb" />
     <Compile Include="GameServer\util\Rnd.vb" />
     <Compile Include="Module1.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
