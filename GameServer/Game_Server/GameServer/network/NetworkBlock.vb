@@ -9,7 +9,7 @@ Friend Class NetworkBlock
     Protected blocks As New List(Of NB_interface)()
 
     Public Sub New()
-        Dim reader As New StreamReader(New FileInfo("sq\blocks.txt").FullName)
+        Dim reader As New StreamReader(New FileInfo("пока еше не сделанно, но вскоре будет").FullName)
         Do While Not reader.EndOfStream
             Dim line As String = reader.ReadLine()
             If line.Length = 0 Then
@@ -33,7 +33,7 @@ Friend Class NetworkBlock
             End If
         Loop
 
-        Logger.info("NetworkBlock: " & blocks.Count & " blocks.")
+      '  Logger.info("NetworkBlock: " & blocks.Count & " blocks.")
     End Sub
 
     Public Function allowed(ByVal ip As String) As Boolean
