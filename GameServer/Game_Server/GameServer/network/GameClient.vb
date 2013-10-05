@@ -13,10 +13,13 @@ Public Class GameClient
     Private _buffer() As Byte
     Public _blowfishKey() As Byte
     Private _crypt As GameCrypt
+    Public _scrambledPair As ScrambledKeyPair
 
 
     Public Protocol As Integer
     Public IsTerminated As Boolean
+
+    
 
     Public TrafficUp As Long = 0, TrafficDown As Long = 0
 
@@ -24,6 +27,7 @@ Public Class GameClient
         _client = tcpClient
         _stream = tcpClient.GetStream()
         _address = tcpClient.Client.RemoteEndPoint
+        _crypt = New GameCrypt
 
         CType(New System.Threading.Thread(AddressOf read), System.Threading.Thread).Start()
     End Sub

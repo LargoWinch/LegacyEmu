@@ -1,3 +1,2 @@
-﻿Public Class AuthLogin
-
+﻿Friend Class AuthLogin
 End Class

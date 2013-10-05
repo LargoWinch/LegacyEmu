@@ -1,3 +1,2 @@
-﻿Public Class CreateCharacter
-
+﻿Friend Class CharCreateOk
 End Class
