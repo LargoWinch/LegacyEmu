@@ -42,7 +42,7 @@ Friend Class AuthLogin
 
         getClient().AccountName = loginName
 
-        Dim connection As MySqlConnection = Sql.getInstance().conn()
+        Dim connection As MySqlConnection '= Sql.getInstance().conn()
         Dim cmd As MySqlCommand = connection.CreateCommand()
 
         connection.Open()

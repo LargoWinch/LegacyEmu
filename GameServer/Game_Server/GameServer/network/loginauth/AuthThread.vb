@@ -21,6 +21,14 @@ Public Class AuthThread
 
     Private awaitingAccounts As New SortedList(Of String, LoginSrvTAccount)()
 
+    Public Sub awaitAccount(ByVal ta As LoginSrvTAccount)
+        If awaitingAccounts.ContainsKey(ta.name) Then
+            awaitingAccounts.Remove(ta.name)
+        End If
+
+        awaitingAccounts.Add(ta.name, ta)
+    End Sub
+
     Public Function getTA(ByVal p As String) As LoginSrvTAccount
         If awaitingAccounts.ContainsKey(p) Then
             Dim ta As LoginSrvTAccount = awaitingAccounts(p)
