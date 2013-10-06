@@ -11,7 +11,7 @@
         For Each pl As Player In _allPlayers.Values
             If pl.Gameclient.AccountName = account Then
                 pl.sendPacket(New LeaveWorld())
-                pl.Termination()
+                ' pl.Termination()
                 Exit For
             End If
         Next pl
@@ -19,6 +19,11 @@
 
     Public Sub unrealiseEntry(ByVal obj As GameObject, ByVal pkuse As Boolean)
     End Sub
+
+    Public Function getPlayerCount() As Short
+        Return CShort(Fix(_allPlayers.Count))
+    End Function
+
 
 
 

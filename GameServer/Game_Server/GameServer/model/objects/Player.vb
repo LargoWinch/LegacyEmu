@@ -5,10 +5,7 @@
         Gameclient.sendPacket(pk)
     End Sub
 
-    Public Sub Termination()
-
-        World.getInstance().unrealiseEntry(Me, True)
-    End Sub
+    
 
 
 End Class
