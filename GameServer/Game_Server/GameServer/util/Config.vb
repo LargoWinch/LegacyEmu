@@ -56,13 +56,13 @@
                 SERVER_PORT = Short.Parse(options.getProperty("port", "7777"))
 
                 DB_HOST = options.getProperty("dbhost", "localhost")
-                DB_NAME = options.getProperty("dbname", "rabbit_cgame")
+                DB_NAME = options.getProperty("dbname", "freya")
                 DB_USER = options.getProperty("dbuser", "root")
                 DB_PASS = options.getProperty("dbpass", "root")
                 DB_PORT = Integer.Parse(options.getProperty("dbport", "3306"))
 
-                MIN_PROTOCOL = Integer.Parse(options.getProperty("MinProtocolRevision", "146"))
-                MAX_PROTOCOL = Integer.Parse(options.getProperty("MaxProtocolRevision", "152"))
+                MIN_PROTOCOL = Integer.Parse(options.getProperty("MinProtocolRevision", "216"))
+                MAX_PROTOCOL = Integer.Parse(options.getProperty("MaxProtocolRevision", "216"))
 
                 AUTH_HOST = options.getProperty("auth_host", "127.0.0.1")
                 AUTH_PORT = Short.Parse(options.getProperty("auth_port", "2107"))
