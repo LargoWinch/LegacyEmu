@@ -12,7 +12,7 @@ Friend Class GameServer
     Protected listener As TcpListener
 
     Public Sub New()
-        Console.Title = "C# Lineage II Freya"
+        Console.Title = "Game Server Lineage II"
 
         Logger.form()
         Config.init("all")
